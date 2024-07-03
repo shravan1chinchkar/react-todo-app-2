@@ -6,16 +6,26 @@ function App() {
   const [image, setimage] = useState("hidden");
   const [cross, setcross] = useState("hidden");
 
-  let lighttheme={
+  let lighttheme = {
     topbackground: "/assets/images/bg-desktop-light.jpg",
     themebutton: "/assets/images/icon-moon.svg",
     mainbgcolor: "#ffffff",
     todocardbgcolor: "#ffffff",
     todocardtextcolor: "#000000",
     todocardlifooter: "#BDBDBD",
-    todocardlifooterhover: "	#484b6a",
+    todocardlifooterhover: "#484b6a",
     themeborder: "#000000",
-  }
+  };
+  let darktheme = {
+    topbackground: "/assets/images/bg-desktop-dark.jpg",
+    themebutton: "/assets/images/icon-sun.svg",
+    mainbgcolor: "#161722",
+    todocardbgcolor: "#25273c",
+    todocardtextcolor: "#cacde8",
+    todocardlifooter: "#777a92",
+    todocardlifooterhover: "#e4e5f1",
+    themeborder: "#777a92",
+  };
 
   const [theme, settheme] = useState(lighttheme);
 
@@ -39,16 +49,12 @@ function App() {
   };
 
   const handleTheme = () => {
-    settheme({
-      topbackground: "/assets/images/bg-desktop-dark.jpg",
-      themebutton: "/assets/images/icon-sun.svg",
-      mainbgcolor: "#161722",
-      todocardbgcolor: "#25273c",
-      todocardtextcolor: "#cacde8",
-      todocardlifooter: "#777a92",
-      todocardlifooterhover: "#e4e5f1",
-      themeborder: "#777a92",
-    });
+    if(theme===lighttheme){
+      settheme(darktheme);
+    }
+    else{
+      settheme(lighttheme);
+    }
   };
 
   return (
@@ -137,7 +143,9 @@ function App() {
                 onClick={handleCross}
               >
                 {/* for dark text color is text-[#cacde8] */}
-                <div className={`font-custom-font-2 text-[${theme.todocardtextcolor}]`}>
+                <div
+                  className={`font-custom-font-2 text-[${theme.todocardtextcolor}]`}
+                >
                   Complete the online javascript course
                 </div>
 
@@ -162,13 +170,19 @@ function App() {
                 {/* Ligth theme hover :custom-h custom-h custom-h */}
 
                 {/* for dark theme hover is text-[#e4e5f1] */}
-                <button className={`hover:text-[${theme.todocardlifooterhover}]`}>
+                <button
+                  className={`hover:text-[${theme.todocardlifooterhover}]`}
+                >
                   All
                 </button>
-                <button className={`hover:text-[${theme.todocardlifooterhover}]`}>
+                <button
+                  className={`hover:text-[${theme.todocardlifooterhover}]`}
+                >
                   Active
                 </button>
-                <button className={`hover:text-[${theme.todocardlifooterhover}]`}>
+                <button
+                  className={`hover:text-[${theme.todocardlifooterhover}]`}
+                >
                   Completed
                 </button>
               </div>
