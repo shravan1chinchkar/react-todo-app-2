@@ -327,7 +327,7 @@ function App() {
                 color: theme.todocardtextcolor,
               }}
               type="text"
-              placeholder="ENTER THE TASK TO DO HERE!"
+              placeholder="Create a new todo..."
               onChange={handlechange}
               value={todo}
               onKeyDown={addTodo}
@@ -375,7 +375,7 @@ function App() {
                   }
                   return (
                     <li
-                      className={`flex gap-[1rem] p-[1rem] border-b-[1px]  cursor-pointer`}
+                      className={`flex gap-[1rem] c2-sm:p-[1rem] c7-sm:p-[20px] border-b-[1px]  cursor-pointer`}
                       style={{ borderColor: theme.themeborder }}
                       id={item.id}
                       key={item.id}
@@ -412,7 +412,7 @@ function App() {
                       </div>
 
                       <div
-                        className={`flex justify-between items-center w-[100%] `}
+                        className={`flex justify-between items-center c3-sm:gap-[1rem] c4-sm:gap-[3rem] c5-sm:gap-[1rem] c6-sm:gap-[1rem] `}
                         onClick={handleCross}
                         id={item.id}
                       >
@@ -424,8 +424,8 @@ function App() {
                           }
                           className={
                             item.isCompleted
-                              ? "font-custom-font-2 line-through"
-                              : "font-custom-font-2 break-words overflow-wrap break-word whitespace-pre-wrap"
+                              ? "font-custom-font-2 line-through break-words overflow-wrap break-word whitespace-pre-wrap text-justify  c1-xl:w-[430px] c2-xl:w-[480px] c1-lg:w-[450px] c1-md:w-[430px] c2-md:w-[412px] c1-sm:w-[420px] c2-sm:w-[350px] c4-sm:w-[330px] c5-sm:w-[210px] c6-sm:w-[190px] c7-sm:w-[180px]"
+                              : "font-custom-font-2 break-words overflow-wrap break-word whitespace-pre-wrap text-justify c1-xl:w-[430px] c2-xl:w-[480px]   c1-lg:w-[450px] c-lg:w-[350px]  c1-md:w-[430px] c2-md:w-[412px] c1-sm:w-[420px] c2-sm:w-[350px] c3-sm:w-[300px] c4-sm:w-[200px] c5-sm:w-[210px] c6-sm:w-[190px] c7-sm:w-[150px]"
                           }
                         >
                           {item.todo}
