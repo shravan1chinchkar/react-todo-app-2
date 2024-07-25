@@ -327,7 +327,7 @@ function App() {
                 color: theme.todocardtextcolor,
               }}
               type="text"
-              placeholder="Create a new todo..."
+              placeholder="Create a new todo...x"
               onChange={handlechange}
               value={todo}
               onKeyDown={addTodo}
