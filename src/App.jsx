@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import clsx from "clsx";
+
 uuidv4();
 
 function App() {
@@ -268,12 +269,13 @@ function App() {
         {/* Followin div consist of the background images */}
         <div className="w-[100vw] c-lg:h-[300px] c-md:h-[250px] ">
           <img
-            className="w-[100%] h-[100%] object-fill"
-            src={
-              window.innerWidth >= "300" && window.innerWidth < "800"
-                ? theme.topbackgroundmobile
-                : theme.topbackground
-            }
+            className="w-[100%] h-[100%] object-fill md:hidden"
+            src={theme.topbackgroundmobile}
+            alt="bg-light-image"
+          />
+          <img
+            className="w-[100%] h-[100%] object-fill hidden md:flex"
+            src={theme.topbackground}
             alt="bg-light-image"
           />
         </div>
